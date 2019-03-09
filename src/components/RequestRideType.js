@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { colors, device, fonts, gStyle, images } from '../api/lib';
 
+// icons
 import SvgChevronDown from './icons/Svg.ChevronDown';
 
 const RequestRideType = ({ image, onPress, text }) => (
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    top: device.iPhoneX ? 64 : 40
+    top: device.iPhoneX ? 54 : 30
   },
   image: {
     borderRadius: 18,

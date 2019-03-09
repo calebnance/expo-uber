@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   separator: {
-    backgroundColor: colors.galleryGrey,
+    backgroundColor: colors.greyGallery,
     height: 1,
     width: '100%'
   }

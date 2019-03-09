@@ -6,5 +6,11 @@ export default {
   white: '#fff',
 
   grey: '#afafaf',
-  galleryGrey: '#eee'
+  greyAbbey: '#53575f',
+  greyGallery: '#eee',
+  greyMercury: '#e5e5e5',
+  greyDusty: '#999',
+
+  green: '#49a061',
+  mint: '#9bd7c2'
 };
