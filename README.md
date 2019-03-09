@@ -2,6 +2,9 @@
 
 quick prototype of Uber's native app
 
+- Expo SDK 32
+- React Navigation v3
+
 ---
 
 - [Install & Build](#install--build)
