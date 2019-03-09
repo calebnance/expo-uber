@@ -8,6 +8,7 @@ import { device, gStyle } from '../api/lib';
 import RequestRideType from '../components/RequestRideType';
 import SelectRideType from '../components/SelectRideType';
 import TouchIcon from '../components/TouchIcon';
+import WhereTo from '../components/WhereTo';
 
 // icons
 import SvgMenu from '../components/icons/Svg.Menu';
@@ -70,7 +71,7 @@ class Home extends React.Component {
 
         <TouchIcon
           icon={<SvgMenu />}
-          iconSize={28}
+          iconSize={32}
           onPress={() => navigation.toggleDrawer()}
           style={styles.menuIcon}
         />
@@ -81,6 +82,8 @@ class Home extends React.Component {
           text={typeText}
         />
         <SelectRideType onClose={this.toggleTypeModal} visible={selectType} />
+
+        <WhereTo />
       </View>
     );
   }
@@ -100,7 +103,7 @@ const styles = StyleSheet.create({
   menuIcon: {
     left: 20,
     position: 'absolute',
-    top: device.iPhoneX ? 70 : 46
+    top: device.iPhoneX ? 58 : 34
   }
 });
 
