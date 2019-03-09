@@ -1,18 +1,23 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { fonts, images } from '../api/lib';
+import { fonts, gStyle, images } from '../api/lib';
 
-const RideTypeItem = ({ image, text }) => (
-  <View style={styles.container}>
+const RideTypeItem = ({ image, onPress, text }) => (
+  <TouchableOpacity
+    activeOpacity={gStyle.activeOpacity}
+    onPress={onPress}
+    style={styles.container}
+  >
     <Image source={images[image]} style={styles.image} />
     <Text style={styles.text}>{text}</Text>
-  </View>
+  </TouchableOpacity>
 );
 
 RideTypeItem.propTypes = {
   // required
   image: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  onPress: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired
 };
 

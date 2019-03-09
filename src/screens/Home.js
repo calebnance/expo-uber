@@ -28,6 +28,7 @@ class Home extends React.Component {
     };
 
     this.toggleTypeModal = this.toggleTypeModal.bind(this);
+    this.changeRideType = this.changeRideType.bind(this);
   }
 
   async componentDidMount() {
@@ -48,6 +49,15 @@ class Home extends React.Component {
     this.setState(prevState => ({
       selectType: !prevState.selectType
     }));
+  }
+
+  changeRideType(data) {
+    const { image, text } = data;
+
+    this.setState({
+      typeImage: image,
+      typeText: text
+    });
   }
 
   render() {
@@ -81,7 +91,11 @@ class Home extends React.Component {
           onPress={this.toggleTypeModal}
           text={typeText}
         />
-        <SelectRideType onClose={this.toggleTypeModal} visible={selectType} />
+        <SelectRideType
+          onClose={this.toggleTypeModal}
+          onSelect={this.changeRideType}
+          visible={selectType}
+        />
 
         <WhereTo />
       </View>

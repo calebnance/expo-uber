@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8
   },
   iconArrow: {
-    marginRight: 4
+    marginRight: 6,
+    marginTop: 4
   }
 });
 
