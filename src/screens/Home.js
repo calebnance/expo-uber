@@ -2,16 +2,18 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Location, MapView, Permissions } from 'expo';
 import PropTypes from 'prop-types';
-import { device, gStyle } from '../api/lib';
+import { colors, device, gStyle } from '../api/lib';
 
 // components
 import RequestRideType from '../components/RequestRideType';
 import SelectRideType from '../components/SelectRideType';
 import TouchIcon from '../components/TouchIcon';
+import TouchText from '../components/TouchText';
 import WhereTo from '../components/WhereTo';
 
 // icons
 import SvgMenu from '../components/icons/Svg.Menu';
+import SvgCheckShield from '../components/icons/Svg.CheckShield';
 
 const { PROVIDER_GOOGLE } = MapView;
 
@@ -21,7 +23,8 @@ class Home extends React.Component {
 
     this.state = {
       typeImage: 'carSm',
-      typeText: 'Car',
+      // typeText: 'Ride',
+      typeText: 'Bike',
       selectType: false,
       userLat: 0,
       userLon: 0
@@ -79,25 +82,48 @@ class Home extends React.Component {
           style={styles.map}
         />
 
-        <TouchIcon
-          icon={<SvgMenu />}
-          iconSize={32}
-          onPress={() => navigation.toggleDrawer()}
-          style={styles.menuIcon}
-        />
+        {typeText === 'Bike' && (
+          <View style={styles.rightContainer}>
+            <View style={styles.icons}>
+              <TouchIcon
+                icon={<SvgCheckShield />}
+                iconSize={20}
+                onPress={() => navigation.navigate('ModalTutorialBike')}
+                style={styles.iconShield}
+              />
+            </View>
+          </View>
+        )}
 
-        <RequestRideType
-          image={typeImage}
-          onPress={this.toggleTypeModal}
-          text={typeText}
-        />
+        <View style={styles.header}>
+          <TouchIcon
+            icon={<SvgMenu />}
+            iconSize={32}
+            onPress={() => navigation.toggleDrawer()}
+          />
+          <RequestRideType
+            image={typeImage}
+            onPress={this.toggleTypeModal}
+            text={typeText}
+          />
+
+          {typeText === 'Ride' && <View style={styles.placeholder} />}
+          {typeText === 'Bike' && (
+            <TouchText
+              onPress={() => navigation.navigate('ModalHelp')}
+              style={styles.help}
+              text="Help"
+            />
+          )}
+        </View>
+
         <SelectRideType
           onClose={this.toggleTypeModal}
           onSelect={this.changeRideType}
           visible={selectType}
         />
 
-        <WhereTo />
+        {typeText === 'Ride' && <WhereTo />}
       </View>
     );
   }
@@ -114,10 +140,39 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: device.width
   },
-  menuIcon: {
-    left: 20,
+  header: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: device.iPhoneX ? 58 : 34
+  },
+  help: {
+    textAlign: 'center',
+    width: 32
+  },
+  placeholder: {
+    height: 32,
+    width: 32
+  },
+  rightContainer: {
+    alignItems: 'center',
+    height: '100%',
+    justifyContent: 'center',
     position: 'absolute',
-    top: device.iPhoneX ? 58 : 34
+    right: 16,
+    width: 40
+  },
+  iconShield: {
+    backgroundColor: colors.white,
+    borderRadius: 18,
+    height: 36,
+    marginTop: 16,
+    shadowColor: colors.black,
+    shadowOffset: { height: 2, width: 0 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    width: 36
   }
 });
 

@@ -4,7 +4,8 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import DrawerStack from './DrawerStack';
 
 // grab screens
-import ModalWhereTo from '../screens/ModalWhereTo';
+import ModalHelp from '../screens/ModalHelp';
+import ModalTutorialBike from '../screens/ModalTutorialBike';
 
 // grab modal routes (dynamic transitions)
 import ModalRoutes from './ModalRoutes';
@@ -15,8 +16,14 @@ const StackNavigator = createStackNavigator(
 
     // Modals
     // /////////////////////////////////////////////////////////////////////////
-    ModalWhereTo: {
-      screen: ModalWhereTo,
+    ModalHelp: {
+      screen: ModalHelp,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
+    },
+    ModalTutorialBike: {
+      screen: ModalTutorialBike,
       navigationOptions: {
         gesturesEnabled: false
       }

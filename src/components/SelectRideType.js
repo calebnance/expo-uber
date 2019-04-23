@@ -17,7 +17,7 @@ const mockData = [
   {
     image: 'bikeSm',
     imageLg: 'bikeLg',
-    text: 'Bike & Scooter'
+    text: 'Bike'
   }
 ];
 

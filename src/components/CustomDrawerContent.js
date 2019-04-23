@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Constants } from 'expo';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { colors, device, fonts } from '../api/lib';
 
-const CustomDrawerContent = ({ navigation }) => (
+const CustomDrawerContent = () => (
   <View style={styles.container}>
     <View style={styles.containerVersion}>
       <Text style={styles.versionText}>{`v${Constants.manifest.version}`}</Text>
@@ -12,10 +12,10 @@ const CustomDrawerContent = ({ navigation }) => (
   </View>
 );
 
-CustomDrawerContent.propTypes = {
-  // required
-  navigation: PropTypes.object.isRequired
-};
+// CustomDrawerContent.propTypes = {
+// required
+// navigation: PropTypes.object.isRequired
+// };
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   versionText: {
     color: colors.grey,
     fontFamily: fonts.light,
-    fontSize: 14,
+    fontSize: 20,
     textAlign: 'right'
   }
 });

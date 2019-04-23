@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, device, fonts, gStyle, images } from '../api/lib';
+import { colors, fonts, gStyle, images } from '../api/lib';
 
 // icons
 import SvgChevronDown from './icons/Svg.ChevronDown';
@@ -29,19 +29,15 @@ RequestRideType.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    alignSelf: 'center',
     alignItems: 'center',
     backgroundColor: colors.white,
     borderRadius: 26,
     flexDirection: 'row',
-    justifyContent: 'center',
     padding: 2,
-    position: 'absolute',
     shadowColor: colors.black,
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
-    shadowRadius: 8,
-    top: device.iPhoneX ? 54 : 30
+    shadowRadius: 8
   },
   image: {
     borderRadius: 18,
@@ -50,7 +46,7 @@ const styles = StyleSheet.create({
     width: 34
   },
   text: {
-    fontFamily: fonts.medium,
+    fontFamily: fonts.light,
     fontSize: 16,
     paddingHorizontal: 8
   },
