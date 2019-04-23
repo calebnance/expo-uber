@@ -1,4 +1,4 @@
-# Expo Uber
+# Uber Clone with Expo
 
 quick prototype of Uber's native app
 
