@@ -11,6 +11,7 @@ export default {
   greyMercury: '#e5e5e5',
   greyDusty: '#999',
 
+  blue: '#3b6ce8',
   green: '#49a061',
   mint: '#9bd7c2'
 };

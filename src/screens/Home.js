@@ -12,8 +12,9 @@ import TouchText from '../components/TouchText';
 import WhereTo from '../components/WhereTo';
 
 // icons
-import SvgMenu from '../components/icons/Svg.Menu';
 import SvgCheckShield from '../components/icons/Svg.CheckShield';
+import SvgMenu from '../components/icons/Svg.Menu';
+import SvgQRCode from '../components/icons/Svg.QRCode';
 
 const { PROVIDER_GOOGLE } = MapView;
 
@@ -23,8 +24,7 @@ class Home extends React.Component {
 
     this.state = {
       typeImage: 'carSm',
-      // typeText: 'Ride',
-      typeText: 'Bike',
+      typeText: 'Ride',
       selectType: false,
       userLat: 0,
       userLon: 0
@@ -86,10 +86,16 @@ class Home extends React.Component {
           <View style={styles.rightContainer}>
             <View style={styles.icons}>
               <TouchIcon
+                icon={<SvgQRCode />}
+                iconSize={20}
+                onPress={() => navigation.navigate('ModalQRCode')}
+                style={[styles.icon, styles.iconQRCode]}
+              />
+              <TouchIcon
                 icon={<SvgCheckShield />}
                 iconSize={20}
                 onPress={() => navigation.navigate('ModalTutorialBike')}
-                style={styles.iconShield}
+                style={[styles.icon, styles.iconShield]}
               />
             </View>
           </View>
@@ -163,16 +169,21 @@ const styles = StyleSheet.create({
     right: 16,
     width: 40
   },
-  iconShield: {
-    backgroundColor: colors.white,
+  icon: {
     borderRadius: 18,
     height: 36,
-    marginTop: 16,
     shadowColor: colors.black,
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
     width: 36
+  },
+  iconQRCode: {
+    backgroundColor: colors.blue,
+    marginBottom: 16
+  },
+  iconShield: {
+    backgroundColor: colors.white
   }
 });
 

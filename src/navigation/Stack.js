@@ -5,6 +5,7 @@ import DrawerStack from './DrawerStack';
 
 // grab screens
 import ModalHelp from '../screens/ModalHelp';
+import ModalQRCode from '../screens/ModalQRCode';
 import ModalTutorialBike from '../screens/ModalTutorialBike';
 
 // grab modal routes (dynamic transitions)
@@ -18,6 +19,12 @@ const StackNavigator = createStackNavigator(
     // /////////////////////////////////////////////////////////////////////////
     ModalHelp: {
       screen: ModalHelp,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
+    },
+    ModalQRCode: {
+      screen: ModalQRCode,
       navigationOptions: {
         gesturesEnabled: false
       }
