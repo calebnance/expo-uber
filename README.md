@@ -4,12 +4,10 @@
   <img src="creative/screenshare-3.png?raw=true" />
 </p>
 
-- Expo SDK 32
-- React Navigation v3
-
 ## Table of Contents
 
 - [Install & Build](#install--build)
+- [Stats](#stats)
 - [Linting](#linting)
 - [Demo & Release Notes](#release-notes)
 
@@ -20,6 +18,11 @@ Install: `yarn install`
 Expo CLI: `npm install -g expo-cli` (if not already installed)
 
 Run Project Locally: `expo start`
+
+## Stats
+- Expo SDK 32
+- React Navigation v3
+- PropTypes
 
 ## Linting
 

@@ -1,21 +1,21 @@
 {
   "expo": {
     "name": "Expo Uber",
-    "description": "expo uber prototype",
+    "description": "uber clone with expo",
     "scheme": "expouber",
     "slug": "expouber",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "version": "0.0.1",
-    "platforms": ["ios", "android"],
+    "platforms": ["android", "ios"],
     "githubUrl": "https://github.com/calebnance/expo-uber",
     "orientation": "portrait",
     "primaryColor": "#000000",
     "icon": "src/assets/icon.png",
     "splash": {
+      "backgroundColor": "#000000",
       "image": "src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

@@ -1,12 +1,13 @@
 {
   "name": "expo-uber",
   "version": "0.0.1",
-  "description": "expo uber prototype",
+  "description": "uber clone with expo",
   "author": "Caleb Nance",
   "license": "MIT",
   "keywords": [
     "expo",
     "react-native",
+    "react-navigation",
     "uber"
   ],
   "main": "node_modules/expo/AppEntry.js",
