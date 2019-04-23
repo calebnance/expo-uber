@@ -1,19 +1,19 @@
 # Uber Clone with Expo
 
-quick prototype of Uber's native app
+<p align="center">
+  <img src="creative/screenshare-3.png?raw=true" />
+</p>
 
 - Expo SDK 32
 - React Navigation v3
 
----
+## Table of Contents
 
 - [Install & Build](#install--build)
 - [Linting](#linting)
 - [Demo & Release Notes](#release-notes)
 
----
-
-#### Install & Build
+## Install & Build
 
 Install: `yarn install`
 
@@ -21,9 +21,7 @@ Expo CLI: `npm install -g expo-cli` (if not already installed)
 
 Run Project Locally: `expo start`
 
----
-
-#### Linting
+## Linting
 
 - prettier and airbnb config
 - make sure you have [prettier package](https://atom.io/packages/prettier-atom) installed on your atom/vscode editor
@@ -33,9 +31,7 @@ Run Project Locally: `expo start`
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
 
----
-
-#### Release Notes
+## Release Notes
 
 **version 0.0.1 (current)**
 
