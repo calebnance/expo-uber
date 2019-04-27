@@ -20,6 +20,7 @@ Expo CLI: `npm install -g expo-cli` (if not already installed)
 Run Project Locally: `expo start`
 
 ## Stats
+
 - Expo SDK 32
 - React Navigation v3
 - PropTypes
@@ -36,7 +37,7 @@ Run Project Locally: `expo start`
 
 ## Release Notes
 
-**version 0.0.1 (current)**
+### version 0.0.1 (current)
 
 - [MapView](https://docs.expo.io/versions/latest/sdk/map-view/) with user's current location ([Expo Location](https://docs.expo.io/versions/v32.0.0/sdk/location/))
 - Select Ride Type Modal (Car or Bike & Scooter)
