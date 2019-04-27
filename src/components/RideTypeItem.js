@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: 54
   },
   text: {
-    fontFamily: fonts.medium,
+    fontFamily: fonts.uberRegular,
     fontSize: 20,
     marginLeft: 16
   }

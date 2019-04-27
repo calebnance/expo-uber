@@ -1,11 +1,12 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import { cacheImages } from './src/api/util';
+import { util } from './src/api/lib';
+
+import preloadFonts from './src/api/preloadFonts';
+import preloadImages from './src/api/preloadImages';
 
 import Stack from './src/navigation/Stack';
-
-import preloadImages from './src/api/preloadImages';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,9 +20,10 @@ export default class App extends React.Component {
   }
 
   async loadAssetsAsync() {
-    const imageAssets = cacheImages(preloadImages);
+    const fontAssets = util.cacheFonts(preloadFonts);
+    const imageAssets = util.cacheImages(preloadImages);
 
-    await Promise.all([...imageAssets]).then(() => {
+    await Promise.all([...fontAssets, ...imageAssets]).then(() => {
       this.setState({ isLoading: false });
     });
   }

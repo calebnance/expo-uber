@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   versionText: {
     color: colors.grey,
-    fontFamily: fonts.light,
+    fontFamily: fonts.uberRegular,
     fontSize: 20,
     textAlign: 'right'
   }

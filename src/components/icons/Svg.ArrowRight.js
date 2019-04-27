@@ -1,0 +1,26 @@
+import React from 'react';
+import { Svg } from 'expo';
+import PropTypes from 'prop-types';
+import { colors } from '../../api/lib';
+
+const SvgArrowRight = ({ fill, size }) => (
+  <Svg height={size} width={size} viewBox="0 0 24 24">
+    <Svg.Path
+      d="M22.2 12l-6.5 9h-3.5l5.5-7.5H2v-3h15.7L12.2 3h3.5l6.5 9z"
+      fill={fill}
+    />
+  </Svg>
+);
+
+SvgArrowRight.defaultProps = {
+  fill: colors.black,
+  size: 24
+};
+
+SvgArrowRight.propTypes = {
+  // optional
+  fill: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  size: PropTypes.number
+};
+
+export default SvgArrowRight;

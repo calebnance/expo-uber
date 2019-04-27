@@ -8,7 +8,8 @@ const DrawerStack = createDrawerNavigator(
   { Home },
   {
     contentComponent: CustomDrawerContent,
-    headerMode: 'none'
+    headerMode: 'none',
+    hideStatusBar: true
   }
 );
 

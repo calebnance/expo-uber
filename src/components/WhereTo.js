@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { colors, device } from '../api/lib';
+import { colors, device, fonts } from '../api/lib';
 
 // icons
 import SvgTruck from './icons/Svg.Truck';
@@ -15,7 +15,7 @@ const WhereTo = () => (
       <View style={styles.containerSquare}>
         <View style={styles.square} />
       </View>
-      <Text style={styles.text}>Where To?</Text>
+      <Text style={styles.text}>Where to?</Text>
       <View style={styles.containerIcon}>
         <SvgTruck />
       </View>
@@ -45,10 +45,12 @@ const styles = StyleSheet.create({
   },
   bannerText: {
     color: colors.white,
+    fontFamily: fonts.uberMedium,
     fontSize: 12
   },
   bannerMuted: {
     color: colors.mint,
+    fontFamily: fonts.uberMedium,
     fontSize: 12
   },
   containerInput: {
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.greyAbbey,
     flex: 8,
+    fontFamily: fonts.uberMedium,
     fontSize: 20
   },
   containerIcon: {
