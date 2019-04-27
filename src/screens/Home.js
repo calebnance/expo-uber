@@ -36,6 +36,7 @@ class Home extends React.Component {
 
   async componentDidMount() {
     const { status } = await Permissions.getAsync(Permissions.LOCATION);
+
     if (status !== 'granted') {
       await Permissions.askAsync(Permissions.LOCATION);
     }

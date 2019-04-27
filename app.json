@@ -24,9 +24,6 @@
     "android": {
       "versionCode": 1
     },
-    "androidStatusBar": {
-      "backgroundColor": "#000000"
-    },
     "ios": {
       "buildNumber": "0.0.1",
       "supportsTablet": true

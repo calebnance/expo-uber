@@ -6,8 +6,8 @@
   "license": "MIT",
   "keywords": [
     "expo",
-    "react-native",
-    "react-navigation",
+    "react native",
+    "react navigation",
     "uber"
   ],
   "main": "node_modules/expo/AppEntry.js",
