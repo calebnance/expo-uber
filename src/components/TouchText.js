@@ -3,19 +3,20 @@ import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { gStyle } from '../api/lib';
 
-const TouchText = ({ onPress, style, text }) => (
+const TouchText = ({ onPress, style, styleText, text }) => (
   <TouchableOpacity
     activeOpacity={gStyle.activeOpacity}
     hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
     onPress={onPress}
     style={[gStyle.flexCenter, style]}
   >
-    <Text>{text}</Text>
+    <Text style={styleText}>{text}</Text>
   </TouchableOpacity>
 );
 
 TouchText.defaultProps = {
-  style: {}
+  style: {},
+  styleText: {}
 };
 
 TouchText.propTypes = {
@@ -25,6 +26,11 @@ TouchText.propTypes = {
 
   // optional
   style: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.object
+  ]),
+  styleText: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.number,
     PropTypes.object

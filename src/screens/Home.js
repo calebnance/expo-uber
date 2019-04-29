@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Linking, StyleSheet, Text, View } from 'react-native';
 import { Location, MapView, Permissions } from 'expo';
 import PropTypes from 'prop-types';
-import { colors, device, gStyle } from '../api/lib';
+import { colors, device, fonts, gStyle } from '../api/lib';
 
 // components
 import RequestRideType from '../components/RequestRideType';
@@ -38,6 +38,7 @@ class Home extends React.Component {
     this.state = {
       type: 'bike',
       selectType: false,
+      showMap: false,
       userLat: null,
       userLon: null
     };
@@ -67,6 +68,7 @@ class Home extends React.Component {
     const { coords } = await Location.getCurrentPositionAsync();
 
     this.setState({
+      showMap: true,
       userLat: coords.latitude,
       userLon: coords.longitude
     });
@@ -86,11 +88,11 @@ class Home extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    const { type, selectType, userLat, userLon } = this.state;
+    const { type, selectType, showMap, userLat, userLon } = this.state;
 
     return (
       <View style={gStyle.container}>
-        {userLat && userLon && (
+        {showMap && (
           <MapView
             followsUserLocation
             provider={PROVIDER_GOOGLE}
@@ -103,6 +105,20 @@ class Home extends React.Component {
             showsUserLocation
             style={styles.map}
           />
+        )}
+
+        {!showMap && (
+          <View style={styles.containerNoLocation}>
+            <Text style={styles.textLocationNeeded}>
+              We need your location data...
+            </Text>
+            <TouchText
+              onPress={() => Linking.openURL('app-settings:')}
+              style={styles.btnGoTo}
+              styleText={styles.btnGoToText}
+              text="Go To Permissions"
+            />
+          </View>
         )}
 
         {type === 'bike' && (
@@ -169,6 +185,29 @@ const styles = StyleSheet.create({
     height: device.height,
     position: 'absolute',
     width: device.width
+  },
+  containerNoLocation: {
+    alignItems: 'center',
+    height: device.height,
+    justifyContent: 'center',
+    position: 'absolute',
+    width: device.width
+  },
+  textLocationNeeded: {
+    fontFamily: fonts.uberMedium,
+    fontSize: 16,
+    marginBottom: 16
+  },
+  btnGoTo: {
+    backgroundColor: colors.black,
+    borderRadius: 3,
+    paddingHorizontal: 16,
+    paddingVertical: 8
+  },
+  btnGoToText: {
+    color: colors.white,
+    fontFamily: fonts.uberMedium,
+    fontSize: 16
   },
   header: {
     alignItems: 'center',
