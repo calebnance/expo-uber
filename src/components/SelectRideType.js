@@ -7,20 +7,6 @@ import { colors, device } from '../api/lib';
 import ModalBackdrop from './ModalBackdrop';
 import RideTypeItem from './RideTypeItem';
 
-// data
-const mockData = [
-  {
-    image: 'carSm',
-    imageLg: 'carLg',
-    text: 'Ride'
-  },
-  {
-    image: 'bikeSm',
-    imageLg: 'bikeLg',
-    text: 'Bike'
-  }
-];
-
 class SelectRideType extends React.Component {
   constructor(props) {
     super(props);
@@ -41,8 +27,9 @@ class SelectRideType extends React.Component {
   }
 
   render() {
-    const { onClose, onSelect, visible } = this.props;
+    const { data, onClose, onSelect, visible } = this.props;
     const { top } = this.state;
+    const dataArray = Object.keys(data);
 
     return (
       <Modal
@@ -53,25 +40,26 @@ class SelectRideType extends React.Component {
       >
         <ModalBackdrop onPress={onClose} />
         <Animated.View style={[styles.container, { top }]}>
-          <RideTypeItem
-            image={mockData[0].imageLg}
-            onPress={() => {
-              onSelect(mockData[0]);
-              onClose();
-            }}
-            text={mockData[0].text}
-          />
+          {dataArray.map((key, index) => {
+            let separator = null;
+            if (dataArray.length !== index + 1) {
+              separator = <View style={styles.separator} />;
+            }
 
-          <View style={styles.separator} />
-
-          <RideTypeItem
-            image={mockData[1].imageLg}
-            onPress={() => {
-              onSelect(mockData[1]);
-              onClose();
-            }}
-            text={mockData[1].text}
-          />
+            return (
+              <React.Fragment key={key}>
+                <RideTypeItem
+                  image={data[key].imageLg}
+                  onPress={() => {
+                    onSelect(key);
+                    onClose();
+                  }}
+                  text={data[key].text}
+                />
+                {separator}
+              </React.Fragment>
+            );
+          })}
         </Animated.View>
       </Modal>
     );
@@ -80,6 +68,11 @@ class SelectRideType extends React.Component {
 
 SelectRideType.propTypes = {
   // required
+  data: PropTypes.shape({
+    image: PropTypes.string,
+    imageLg: PropTypes.string,
+    text: PropTypes.string
+  }).isRequired,
   onClose: PropTypes.func.isRequired,
   onSelect: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired

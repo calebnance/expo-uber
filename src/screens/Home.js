@@ -18,16 +18,28 @@ import SvgQRCode from '../components/icons/Svg.QRCode';
 
 const { PROVIDER_GOOGLE } = MapView;
 
+const types = {
+  car: {
+    image: 'carSm',
+    imageLg: 'carLg',
+    text: 'Ride'
+  },
+  bike: {
+    image: 'bikeSm',
+    imageLg: 'bikeLg',
+    text: 'Bike'
+  }
+};
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      typeImage: 'carSm',
-      typeText: 'Ride',
+      type: 'bike',
       selectType: false,
-      userLat: 0,
-      userLon: 0
+      userLat: null,
+      userLon: null
     };
 
     this.toggleTypeModal = this.toggleTypeModal.bind(this);
@@ -35,10 +47,21 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    const { status } = await Permissions.getAsync(Permissions.LOCATION);
+    // get exisiting locaton permissions first
+    const { status: existingStatus } = await Permissions.getAsync(
+      Permissions.LOCATION
+    );
+    let finalStatus = existingStatus;
 
-    if (status !== 'granted') {
-      await Permissions.askAsync(Permissions.LOCATION);
+    // ask again to grant locaton permissions (if not already allowed)
+    if (existingStatus !== 'granted') {
+      const { status } = await Permissions.askAsync(Permissions.LOCATION);
+      finalStatus = status;
+    }
+
+    // still not allowed to use location?
+    if (finalStatus !== 'granted') {
+      return;
     }
 
     const { coords } = await Location.getCurrentPositionAsync();
@@ -55,35 +78,34 @@ class Home extends React.Component {
     }));
   }
 
-  changeRideType(data) {
-    const { image, text } = data;
-
+  changeRideType(type) {
     this.setState({
-      typeImage: image,
-      typeText: text
+      type
     });
   }
 
   render() {
     const { navigation } = this.props;
-    const { typeImage, typeText, selectType, userLat, userLon } = this.state;
+    const { type, selectType, userLat, userLon } = this.state;
 
     return (
       <View style={gStyle.container}>
-        <MapView
-          followsUserLocation
-          provider={PROVIDER_GOOGLE}
-          region={{
-            latitude: userLat,
-            longitude: userLon,
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01
-          }}
-          showsUserLocation
-          style={styles.map}
-        />
+        {userLat && userLon && (
+          <MapView
+            followsUserLocation
+            provider={PROVIDER_GOOGLE}
+            region={{
+              latitude: userLat,
+              longitude: userLon,
+              latitudeDelta: 0.01,
+              longitudeDelta: 0.01
+            }}
+            showsUserLocation
+            style={styles.map}
+          />
+        )}
 
-        {typeText === 'Bike' && (
+        {type === 'bike' && (
           <View style={styles.rightContainer}>
             <View style={styles.icons}>
               <TouchIcon
@@ -109,13 +131,13 @@ class Home extends React.Component {
             onPress={() => navigation.toggleDrawer()}
           />
           <RequestRideType
-            image={typeImage}
+            image={types[type].image}
             onPress={this.toggleTypeModal}
-            text={typeText}
+            text={types[type].text}
           />
 
-          {typeText === 'Ride' && <View style={styles.placeholder} />}
-          {typeText === 'Bike' && (
+          {type === 'car' && <View style={styles.placeholder} />}
+          {type === 'bike' && (
             <TouchText
               onPress={() => navigation.navigate('ModalHelp')}
               style={styles.help}
@@ -125,12 +147,13 @@ class Home extends React.Component {
         </View>
 
         <SelectRideType
+          data={types}
           onClose={this.toggleTypeModal}
           onSelect={this.changeRideType}
           visible={selectType}
         />
 
-        {typeText === 'Ride' && <WhereTo />}
+        {type === 'car' && <WhereTo />}
       </View>
     );
   }
