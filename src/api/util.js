@@ -1,13 +1,17 @@
 import { Image } from 'react-native';
 import { Asset, Font } from 'expo';
 
-const cacheFonts = fonts => {
+// cache fonts
+// /////////////////////////////////////////////////////////////////////////////
+export const cacheFonts = fonts => {
   const mappedFonts = fonts.map(font => Font.loadAsync(font));
 
   return mappedFonts;
 };
 
-const cacheImages = images => {
+// cache images
+// /////////////////////////////////////////////////////////////////////////////
+export const cacheImages = images => {
   const imagesArray = Object.values(images);
 
   return imagesArray.map(image => {
@@ -17,9 +21,4 @@ const cacheImages = images => {
 
     return Asset.fromModule(image).downloadAsync();
   });
-};
-
-export default {
-  cacheFonts,
-  cacheImages
 };

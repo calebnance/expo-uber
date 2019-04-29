@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import { util } from './src/api/lib';
+import { cacheFonts, cacheImages } from './src/api/util';
 
 import preloadFonts from './src/api/preloadFonts';
 import preloadImages from './src/api/preloadImages';
@@ -20,8 +20,8 @@ export default class App extends React.Component {
   }
 
   async loadAssetsAsync() {
-    const fontAssets = util.cacheFonts(preloadFonts);
-    const imageAssets = util.cacheImages(preloadImages);
+    const fontAssets = cacheFonts(preloadFonts);
+    const imageAssets = cacheImages(preloadImages);
 
     await Promise.all([...fontAssets, ...imageAssets]).then(() => {
       this.setState({ isLoading: false });
