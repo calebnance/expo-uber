@@ -6,8 +6,8 @@ import { colors, device, fonts, gStyle } from '../api/lib';
 // icons
 import SvgClose from './icons/Svg.Close';
 
-const ModalHeader = ({ navigation, text }) => (
-  <View style={styles.container}>
+const ModalHeader = ({ navigation, style, text }) => (
+  <View style={[styles.container, style]}>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
       hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
@@ -21,6 +21,7 @@ const ModalHeader = ({ navigation, text }) => (
 );
 
 ModalHeader.defaultProps = {
+  style: {},
   text: null
 };
 
@@ -29,6 +30,11 @@ ModalHeader.propTypes = {
   navigation: PropTypes.object.isRequired,
 
   // optional
+  style: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.object
+  ]),
   text: PropTypes.string
 };
 

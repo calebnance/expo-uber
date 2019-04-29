@@ -25,10 +25,17 @@ export default {
     elevation: 0
   },
 
+  flex1: { flex: 1 },
+  flex2: { flex: 2 },
+  flex3: { flex: 3 },
+  flex4: { flex: 4 },
+
   mB8: { marginBottom: 8 },
   mR8: { marginRight: 8 },
   mR16: { marginRight: 16 },
   mR24: { marginRight: 24 },
+  mR48: { marginRight: 48 },
+  mR64: { marginRight: 64 },
 
   mV16: { marginVertical: 16 },
   mV24: { marginVertical: 24 },
