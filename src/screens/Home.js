@@ -36,7 +36,7 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      type: 'bike',
+      type: 'car',
       selectType: false,
       showMap: false,
       userLat: null,
