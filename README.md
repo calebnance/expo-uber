@@ -1,7 +1,7 @@
 # Uber Clone with Expo
 
 <p align="center">
-  <img src="creative/screenshare-3.png?raw=true" />
+  <img src="screenshots/screenshare-3.png?raw=true" />
 </p>
 
 ## Table of Contents
@@ -44,5 +44,5 @@ Run Project Locally: `expo start`
 - [Drawer](https://reactnavigation.org/docs/en/drawer-navigator.html) Example with React Navigation
 
 <p align="left">
-  <img src="creative/releases/screenshot-v0.0.1.jpg?raw=true" width="360" />
+  <img src="screenshots/screenshot-v0.0.1.jpg?raw=true" width="360" />
 </p>
