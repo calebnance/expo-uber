@@ -2,7 +2,7 @@ import React from 'react';
 import { Linking, StyleSheet, Text, View } from 'react-native';
 import { Location, MapView, Permissions } from 'expo';
 import PropTypes from 'prop-types';
-import { colors, device, fonts, gStyle } from '../api/lib';
+import { colors, device, fonts, gStyle } from '../constants';
 
 // components
 import RequestRideType from '../components/RequestRideType';

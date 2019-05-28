@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { BarCodeScanner } from 'expo';
-import { colors, device, fonts, gStyle, images } from '../api/lib';
-
-import { cameraAccessAsync } from '../api/util';
+import { colors, device, fonts, func, gStyle, images } from '../constants';
 
 // components
 import ModalHeader from '../components/ModalHeader';
@@ -22,7 +20,7 @@ class ModalQRCode extends React.Component {
   }
 
   async componentDidMount() {
-    const accessGranted = await cameraAccessAsync();
+    const accessGranted = await func.cameraAccessAsync();
 
     this.setState({
       cameraAccess: accessGranted

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, Modal, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, device } from '../api/lib';
+import { colors, device } from '../constants';
 
 // components
 import ModalBackdrop from './ModalBackdrop';

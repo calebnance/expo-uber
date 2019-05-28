@@ -1,7 +1,7 @@
 import React from 'react';
 import { Svg } from 'expo';
 import PropTypes from 'prop-types';
-import { colors } from '../../api/lib';
+import { colors } from '../../constants';
 
 const SvgMenu = ({ fill, size }) => (
   <Svg height={size} width={size} viewBox="0 0 24 24">
