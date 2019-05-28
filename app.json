@@ -2,8 +2,8 @@
   "expo": {
     "name": "Expo Uber",
     "description": "uber clone with expo",
-    "scheme": "expouber",
-    "slug": "expouber",
+    "scheme": "uberclone",
+    "slug": "uberclone",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "version": "0.0.1",

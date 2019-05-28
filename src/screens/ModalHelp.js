@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
-import { gStyle } from '../api/lib';
+import { gStyle } from '../constants';
 
 // components
 import ModalHeader from '../components/ModalHeader';

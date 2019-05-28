@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { colors, device, fonts } from '../api/lib';
+import { colors, device, fonts } from '../constants';
 
 // icons
 import SvgTruck from './icons/Svg.Truck';

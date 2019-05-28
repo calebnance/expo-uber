@@ -1,10 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import { cacheFonts, cacheImages } from './src/api/util';
-
-import preloadFonts from './src/api/preloadFonts';
-import preloadImages from './src/api/preloadImages';
+import { func } from './src/constants';
 
 import Stack from './src/navigation/Stack';
 
@@ -15,17 +12,6 @@ export default class App extends React.Component {
     this.state = {
       isLoading: true
     };
-
-    this.loadAssetsAsync = this.loadAssetsAsync.bind(this);
-  }
-
-  async loadAssetsAsync() {
-    const fontAssets = cacheFonts(preloadFonts);
-    const imageAssets = cacheImages(preloadImages);
-
-    await Promise.all([...fontAssets, ...imageAssets]).then(() => {
-      this.setState({ isLoading: false });
-    });
   }
 
   render() {
@@ -35,7 +21,7 @@ export default class App extends React.Component {
       return (
         <AppLoading
           onFinish={() => this.setState({ isLoading: false })}
-          startAsync={this.loadAssetsAsync}
+          startAsync={func.loadAssetsAsync}
         />
       );
     }
