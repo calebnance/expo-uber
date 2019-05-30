@@ -17,7 +17,7 @@ Install: `yarn install`
 
 Expo CLI: `npm install -g expo-cli` (if not already installed)
 
-Run Project Locally: `expo start`
+Run Project Locally: `expo start` or `yarn dev`
 
 ## Stats
 
@@ -27,6 +27,7 @@ Run Project Locally: `expo start`
 
 ## Linting
 
+- `yarn lint`
 - prettier and airbnb config
 - make sure you have [prettier package](https://atom.io/packages/prettier-atom) installed on your atom/vscode editor
 - then make sure to enable these options (packages → prettier):
