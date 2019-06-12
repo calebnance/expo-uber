@@ -1,6 +1,8 @@
 import React from 'react';
 import { Linking, StyleSheet, Text, View } from 'react-native';
-import { Location, MapView, Permissions } from 'expo';
+import * as Location from 'expo-location';
+import MapView from 'react-native-maps';
+import * as Permissions from 'expo-permissions';
 import PropTypes from 'prop-types';
 import { colors, device, fonts, gStyle } from '../constants';
 

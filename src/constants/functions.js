@@ -1,5 +1,7 @@
 import { Image } from 'react-native';
-import { Asset, Font, Permissions } from 'expo';
+import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
+import * as Permissions from 'expo-permissions';
 
 import preloadFonts from './preloadFonts';
 import preloadImages from './preloadImages';

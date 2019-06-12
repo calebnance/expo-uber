@@ -1,11 +1,11 @@
 import React from 'react';
-import { Svg } from 'expo';
+import Svg, { Path } from 'react-native-svg';
 import PropTypes from 'prop-types';
 import { colors } from '../../constants';
 
 const SvgChevronDown = ({ fill, size }) => (
   <Svg height={size} width={size} viewBox="0 0 24 24">
-    <Svg.Path
+    <Path
       d="M5.293 9.707l6 6a.999.999 0 0 0 1.414 0l6-6a.999.999 0 1 0-1.414-1.414L12 13.586 6.707 8.293a.999.999 0 1 0-1.414 1.414z"
       fill={fill}
     />
