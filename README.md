@@ -21,7 +21,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Stats
 
-- Expo SDK 34
+- Expo SDK 35
 - React Navigation v3
 - PropTypes
 
