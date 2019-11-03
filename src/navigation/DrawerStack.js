@@ -5,7 +5,9 @@ import Home from '../screens/Home';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 
 const DrawerStack = createDrawerNavigator(
-  { Home },
+  {
+    Home
+  },
   {
     contentComponent: CustomDrawerContent,
     headerMode: 'none',
