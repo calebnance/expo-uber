@@ -17,9 +17,9 @@
 
 ## Install & Build
 
-Install: `yarn` or `yarn install`
+First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-Expo CLI: `npm install -g expo-cli` (if not already installed)
+Install: `yarn` or `yarn install`
 
 Run Project Locally: `expo start` or `yarn dev`
 
@@ -31,9 +31,11 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Linting
 
-- `yarn lint`
+- run: `yarn lint` for a list of linting warnings/error in cli
 - prettier and airbnb config
-- make sure you have [prettier package](https://atom.io/packages/prettier-atom) installed on your atom/vscode editor
+- make sure you have prettier package installed:
+  - [prettier for atom](https://atom.io/packages/prettier-atom)
+  - [prettier for vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - then make sure to enable these options (packages → prettier):
   - eslint integration
   - stylelint integration
