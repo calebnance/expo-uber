@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import { colors } from '../constants';
 
 const ModalBackdrop = ({ onPress }) => (

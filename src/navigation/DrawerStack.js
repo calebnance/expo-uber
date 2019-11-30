@@ -1,6 +1,6 @@
 import { createDrawerNavigator } from 'react-navigation';
 
-// grab screens
+// screens
 import Home from '../screens/Home';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 

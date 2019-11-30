@@ -1,14 +1,14 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-// grab navigation
+// navigation
 import DrawerStack from './DrawerStack';
 
-// grab screens
+// screens
 import ModalHelp from '../screens/ModalHelp';
 import ModalQRCode from '../screens/ModalQRCode';
 import ModalTutorialBike from '../screens/ModalTutorialBike';
 
-// grab modal routes (dynamic transitions)
+// modal routes (dynamic transitions)
 import ModalRoutes from './ModalRoutes';
 
 const StackNavigator = createStackNavigator(

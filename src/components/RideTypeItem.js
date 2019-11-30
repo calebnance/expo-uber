@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { fonts, gStyle, images } from '../constants';
 
 const RideTypeItem = ({ image, onPress, text }) => (

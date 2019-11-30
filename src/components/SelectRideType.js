@@ -1,6 +1,6 @@
 import React from 'react';
-import { Animated, Modal, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Animated, Modal, StyleSheet, View } from 'react-native';
 import { colors, device } from '../constants';
 
 // components
