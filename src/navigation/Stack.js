@@ -1,4 +1,5 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 // navigation
 import DrawerStack from './DrawerStack';
@@ -7,9 +8,6 @@ import DrawerStack from './DrawerStack';
 import ModalHelp from '../screens/ModalHelp';
 import ModalQRCode from '../screens/ModalQRCode';
 import ModalTutorialBike from '../screens/ModalTutorialBike';
-
-// modal routes (dynamic transitions)
-import ModalRoutes from './ModalRoutes';
 
 const StackNavigator = createStackNavigator(
   {
@@ -39,7 +37,7 @@ const StackNavigator = createStackNavigator(
   {
     headerMode: 'none',
     initialRouteName: 'DrawerStack',
-    transitionConfig: ModalRoutes
+    mode: 'modal'
   }
 );
 

@@ -26,7 +26,7 @@ Run Project Locally: `expo start` or `yarn dev`
 ## Stats
 
 - Expo SDK 35
-- React Navigation v3
+- React Navigation v4
 - PropTypes
 
 ## Linting

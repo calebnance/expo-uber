@@ -1,4 +1,4 @@
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 // screens
 import Home from '../screens/Home';
