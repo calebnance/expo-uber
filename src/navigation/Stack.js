@@ -15,24 +15,9 @@ const StackNavigator = createStackNavigator(
 
     // Modals
     // /////////////////////////////////////////////////////////////////////////
-    ModalHelp: {
-      screen: ModalHelp,
-      navigationOptions: {
-        gesturesEnabled: false
-      }
-    },
-    ModalQRCode: {
-      screen: ModalQRCode,
-      navigationOptions: {
-        gesturesEnabled: false
-      }
-    },
-    ModalTutorialBike: {
-      screen: ModalTutorialBike,
-      navigationOptions: {
-        gesturesEnabled: false
-      }
-    }
+    ModalHelp,
+    ModalQRCode,
+    ModalTutorialBike
   },
   {
     headerMode: 'none',

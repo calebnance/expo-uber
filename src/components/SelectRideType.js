@@ -22,7 +22,11 @@ class SelectRideType extends React.Component {
 
     if (visible !== prevProps.visible) {
       const toValue = visible ? 0 : -200;
-      Animated.timing(top, { duration: 300, toValue }).start();
+      Animated.timing(top, {
+        duration: 300,
+        toValue,
+        useNativeDriver: false
+      }).start();
     }
   }
 
