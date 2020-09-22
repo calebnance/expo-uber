@@ -1,4 +1,4 @@
-# Uber Clone with Expo
+# Uber: UI Clone with Expo
 
 [![made with expo](https://img.shields.io/badge/MADE%20WITH%20EXPO-000.svg?style=for-the-badge&logo=expo&labelColor=4630eb&logoWidth=20)](https://github.com/expo/expo) [![supports iOS and Android](https://img.shields.io/badge/Platforms-Native-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo)
 
@@ -11,7 +11,7 @@
 ## Table of Contents
 
 - [Install & Build](#install--build)
-- [Stats](#stats)
+- [Features](#features)
 - [Linting](#linting)
 - [Demo & Release Notes](#release-notes)
 
@@ -23,9 +23,9 @@ Install: `yarn` or `yarn install`
 
 Run Project Locally: `expo start` or `yarn dev`
 
-## Stats
+## Features
 
-- Expo SDK 38
+- Expo SDK 39
 - React Navigation v4
 - PropTypes
 
@@ -46,6 +46,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 39](https://dev.to/expo/expo-sdk-39-is-now-available-1lm8)
 - upgraded to [Expo SDK 38](https://blog.expo.io/expo-sdk-38-is-now-available-ab6cd30ca2ee)
 - upgraded to [Expo SDK 37](https://blog.expo.io/expo-sdk-37-is-now-available-dd5770f066a6)
 - upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
