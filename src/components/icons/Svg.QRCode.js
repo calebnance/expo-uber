@@ -23,4 +23,4 @@ SvgQRCode.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgQRCode;
+export default React.memo(SvgQRCode);

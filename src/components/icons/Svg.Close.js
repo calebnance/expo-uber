@@ -23,4 +23,4 @@ SvgClose.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgClose;
+export default React.memo(SvgClose);

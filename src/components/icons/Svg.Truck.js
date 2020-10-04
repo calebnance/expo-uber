@@ -23,4 +23,4 @@ SvgTruck.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgTruck;
+export default React.memo(SvgTruck);

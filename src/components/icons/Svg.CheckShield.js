@@ -23,4 +23,4 @@ SvgCheckShield.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgCheckShield;
+export default React.memo(SvgCheckShield);

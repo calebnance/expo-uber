@@ -23,4 +23,4 @@ SvgChevronRight.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgChevronRight;
+export default React.memo(SvgChevronRight);
