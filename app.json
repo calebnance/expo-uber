@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo Uber",
-    "description": "uber clone with expo",
+    "description": "Uber: UI Clone with React Native & Expo",
     "scheme": "uberclone",
     "slug": "uberclone",
     "privacy": "public",
