@@ -8,8 +8,8 @@ import { colors, device, fonts, func, gStyle, images } from '../constants';
 import ModalHeader from '../components/ModalHeader';
 
 class ModalQRCode extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       cameraAccess: null,

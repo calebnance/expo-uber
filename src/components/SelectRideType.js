@@ -8,8 +8,8 @@ import ModalBackdrop from './ModalBackdrop';
 import RideTypeItem from './RideTypeItem';
 
 class SelectRideType extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       top: new Animated.Value(-200)

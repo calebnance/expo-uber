@@ -77,7 +77,7 @@ class Home extends React.Component {
   }
 
   toggleTypeModal() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       selectType: !prevState.selectType
     }));
   }
