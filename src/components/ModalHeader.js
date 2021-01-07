@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { colors, device, fonts, gStyle } from '../constants';
 
 // icons
@@ -55,4 +56,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ModalHeader;
+export default withNavigation(ModalHeader);
