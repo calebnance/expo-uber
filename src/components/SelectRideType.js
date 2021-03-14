@@ -7,68 +7,49 @@ import { colors, device } from '../constants';
 import ModalBackdrop from './ModalBackdrop';
 import RideTypeItem from './RideTypeItem';
 
-class SelectRideType extends React.Component {
-  constructor() {
-    super();
+const SelectRideType = ({ data, onClose, onSelect, visible }) => {
+  const dataArray = Object.keys(data);
+  const top = new Animated.Value(-200);
 
-    this.state = {
-      top: new Animated.Value(-200)
-    };
-  }
+  Animated.timing(top, {
+    duration: 400,
+    toValue: 0,
+    useNativeDriver: false
+  }).start();
 
-  componentDidUpdate(prevProps) {
-    const { visible } = this.props;
-    const { top } = this.state;
+  return (
+    <Modal
+      animationType="fade"
+      onRequestClose={onClose}
+      transparent
+      visible={visible}
+    >
+      <ModalBackdrop onPress={onClose} />
+      <Animated.View style={[styles.container, { top }]}>
+        {dataArray.map((key, index) => {
+          let separator = null;
+          if (dataArray.length !== index + 1) {
+            separator = <View style={styles.separator} />;
+          }
 
-    if (visible !== prevProps.visible) {
-      const toValue = visible ? 0 : -200;
-      Animated.timing(top, {
-        duration: 300,
-        toValue,
-        useNativeDriver: false
-      }).start();
-    }
-  }
-
-  render() {
-    const { data, onClose, onSelect, visible } = this.props;
-    const { top } = this.state;
-    const dataArray = Object.keys(data);
-
-    return (
-      <Modal
-        animationType="fade"
-        onRequestClose={onClose}
-        transparent
-        visible={visible}
-      >
-        <ModalBackdrop onPress={onClose} />
-        <Animated.View style={[styles.container, { top }]}>
-          {dataArray.map((key, index) => {
-            let separator = null;
-            if (dataArray.length !== index + 1) {
-              separator = <View style={styles.separator} />;
-            }
-
-            return (
-              <React.Fragment key={key}>
-                <RideTypeItem
-                  image={data[key].imageLg}
-                  onPress={() => {
-                    onSelect(key);
-                    onClose();
-                  }}
-                  text={data[key].text}
-                />
-                {separator}
-              </React.Fragment>
-            );
-          })}
-        </Animated.View>
-      </Modal>
-    );
-  }
-}
+          return (
+            <React.Fragment key={key}>
+              <RideTypeItem
+                image={data[key].imageLg}
+                onPress={() => {
+                  onSelect(key);
+                  onClose();
+                }}
+                text={data[key].text}
+              />
+              {separator}
+            </React.Fragment>
+          );
+        })}
+      </Animated.View>
+    </Modal>
+  );
+};
 
 SelectRideType.propTypes = {
   // required

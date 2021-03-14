@@ -34,8 +34,8 @@ const types = {
 };
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       type: 'car',
