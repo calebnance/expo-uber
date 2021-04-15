@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Linking, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
 import MapView from 'react-native-maps';
-import * as Permissions from 'expo-permissions';
 import { colors, device, fonts, gStyle } from '../constants';
 
 // components
@@ -51,14 +50,14 @@ class Home extends React.Component {
 
   async componentDidMount() {
     // get exisiting locaton permissions first
-    const { status: existingStatus } = await Permissions.getAsync(
-      Permissions.LOCATION
-    );
+    const {
+      status: existingStatus
+    } = await Location.requestForegroundPermissionsAsync();
     let finalStatus = existingStatus;
 
     // ask again to grant locaton permissions (if not already allowed)
     if (existingStatus !== 'granted') {
-      const { status } = await Permissions.askAsync(Permissions.LOCATION);
+      const { status } = await Location.requestForegroundPermissionsAsync();
       finalStatus = status;
     }
 
@@ -185,6 +184,7 @@ Home.propTypes = {
 const styles = StyleSheet.create({
   map: {
     height: device.height,
+    flex: 1,
     position: 'absolute',
     width: device.width
   },
