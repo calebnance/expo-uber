@@ -183,8 +183,8 @@ Home.propTypes = {
 
 const styles = StyleSheet.create({
   map: {
-    height: device.height,
     flex: 1,
+    height: device.height,
     position: 'absolute',
     width: device.width
   },

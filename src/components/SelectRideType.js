@@ -25,6 +25,7 @@ const SelectRideType = ({ data, onClose, onSelect, visible }) => {
       visible={visible}
     >
       <ModalBackdrop onPress={onClose} />
+
       <Animated.View style={[styles.container, { top }]}>
         {dataArray.map((key, index) => {
           let separator = null;
