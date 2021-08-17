@@ -1,25 +1,29 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { withNavigation } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
 import { colors, device, fonts, gStyle } from '../constants';
 
 // icons
 import SvgClose from './icons/Svg.Close';
 
-const ModalHeader = ({ navigation, style, text }) => (
-  <View style={[styles.container, style]}>
-    <TouchableOpacity
-      activeOpacity={gStyle.activeOpacity}
-      hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-      onPress={() => navigation.goBack(null)}
-      style={styles.containerIconRight}
-    >
-      <SvgClose />
-    </TouchableOpacity>
-    {text && <Text style={styles.header}>{text}</Text>}
-  </View>
-);
+const ModalHeader = ({ style, text }) => {
+  const navigation = useNavigation();
+
+  return (
+    <View style={[styles.container, style]}>
+      <TouchableOpacity
+        activeOpacity={gStyle.activeOpacity}
+        hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
+        onPress={() => navigation.goBack(null)}
+        style={styles.containerIconRight}
+      >
+        <SvgClose />
+      </TouchableOpacity>
+      {text && <Text style={styles.header}>{text}</Text>}
+    </View>
+  );
+};
 
 ModalHeader.defaultProps = {
   style: {},
@@ -27,9 +31,6 @@ ModalHeader.defaultProps = {
 };
 
 ModalHeader.propTypes = {
-  // required
-  navigation: PropTypes.object.isRequired,
-
   // optional
   style: PropTypes.oneOfType([
     PropTypes.array,
@@ -56,4 +57,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withNavigation(ModalHeader);
+export default ModalHeader;

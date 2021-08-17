@@ -27,10 +27,10 @@ class ModalQRCode extends React.Component {
     });
   }
 
-  // handleBarCodeScanned({ data, type }) {
-  //   console.log(data);
-  //   console.log(type);
-  // }
+  handleBarCodeScanned({ data, type }) {
+    console.log(data);
+    console.log(type);
+  }
 
   render() {
     const { navigation } = this.props;

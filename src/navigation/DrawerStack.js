@@ -1,18 +1,16 @@
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import * as React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // screens
 import Home from '../screens/Home';
+
+// components
 import CustomDrawerContent from '../components/CustomDrawerContent';
 
-const DrawerStack = createDrawerNavigator(
-  {
-    Home
-  },
-  {
-    contentComponent: CustomDrawerContent,
-    headerMode: 'none',
-    hideStatusBar: true
-  }
-);
+const Drawer = createDrawerNavigator();
 
-export default DrawerStack;
+export default () => (
+  <Drawer.Navigator drawerContent={CustomDrawerContent}>
+    <Drawer.Screen name="Home" component={Home} />
+  </Drawer.Navigator>
+);
