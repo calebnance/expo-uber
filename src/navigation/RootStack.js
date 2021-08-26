@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  createStackNavigator
+} from '@react-navigation/stack';
 
 // drawer stack
 import DrawerStack from './DrawerStack';
@@ -15,7 +17,12 @@ const Stack = createStackNavigator();
 
 export default () => (
   <NavigationContainer>
-    <Stack.Navigator mode="modal">
+    <Stack.Navigator
+      screenOptions={{
+        cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+        presentation: 'modal'
+      }}
+    >
       <Stack.Screen
         name="DrawerStack"
         component={DrawerStack}
