@@ -2,16 +2,16 @@
 
 [![follow @calebnance](https://img.shields.io/twitter/follow/calebnance.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray)](https://twitter.com/calebnance)
 
+## Features
+
+- Expo SDK 42
+- iOS and Android
+- React Navigation v6
+- PropTypes
+
 <p align="center">
   <img src="screenshots/screenshare-3.png?raw=true" />
 </p>
-
-## Table of Contents
-
-- [Install & Build](#install--build)
-- [Features](#features)
-- [Linting](#linting)
-- [Demo & Release Notes](#release-notes)
 
 ## Install & Build
 
@@ -20,13 +20,6 @@ First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 Install: `yarn` or `yarn install`
 
 Run Project Locally: `yarn dev` or `yarn start`
-
-## Features
-
-- Expo SDK 42
-- iOS and Android
-- React Navigation v6
-- PropTypes
 
 ## Linting
 
@@ -42,8 +35,6 @@ Run Project Locally: `yarn dev` or `yarn start`
 - be aware of the `.prettierignore` file
 
 ## Release Notes
-
-### version 0.0.1 (current)
 
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
