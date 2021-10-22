@@ -34,6 +34,12 @@ Run Project Locally: `yarn dev` or `yarn start`
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
 
+**Update Linting Packages:**
+
+```
+yarn add @babel/core eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier --dev
+```
+
 ## Release Notes
 
 - upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
