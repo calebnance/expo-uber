@@ -4,7 +4,7 @@
 
 ## Features
 
-- Expo SDK 43
+- Expo SDK 44
 - iOS and Android
 - React Navigation v6
 - PropTypes
