@@ -67,7 +67,7 @@ SelectRideType.propTypes = {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    paddingTop: device.iPhoneX ? 44 : 20,
+    paddingTop: device.iPhoneNotch ? 44 : 20,
     position: 'absolute',
     top: 0,
     width: '100%'

@@ -16,9 +16,6 @@
       "image": "src/assets/splash.png",
       "resizeMode": "contain"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": ["**/*"],
     "android": {
       "versionCode": 1

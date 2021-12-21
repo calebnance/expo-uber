@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    top: device.iPhoneX ? 144 : 120,
+    top: device.iPhoneNotch ? 144 : 120,
     width: device.width - 40
   },
   containerBanner: {

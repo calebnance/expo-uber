@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginTop: 60
   },
   containerVersion: {
-    bottom: device.iPhoneX ? 40 : 16,
+    bottom: device.iPhoneNotch ? 40 : 16,
     paddingHorizontal: 38,
     position: 'absolute',
     width: '100%'

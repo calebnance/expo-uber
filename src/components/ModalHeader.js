@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.black,
     paddingHorizontal: 24,
-    paddingTop: device.iPhoneX ? 48 : 24
+    paddingTop: device.iPhoneNotch ? 48 : 24
   },
   containerIconRight: {
     width: 20

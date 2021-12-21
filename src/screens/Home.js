@@ -50,9 +50,8 @@ class Home extends React.Component {
 
   async componentDidMount() {
     // get exisiting locaton permissions first
-    const {
-      status: existingStatus
-    } = await Location.requestForegroundPermissionsAsync();
+    const { status: existingStatus } =
+      await Location.requestForegroundPermissionsAsync();
     let finalStatus = existingStatus;
 
     // ask again to grant locaton permissions (if not already allowed)
@@ -216,7 +215,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingTop: device.iPhoneX ? 58 : 34
+    paddingTop: device.iPhoneNotch ? 58 : 34
   },
   help: {
     textAlign: 'center',
