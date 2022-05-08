@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  CardStyleInterpolators,
-  createStackNavigator
-} from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // drawer stack
 import DrawerStack from './DrawerStack';
@@ -13,14 +10,13 @@ import ModalHelp from '../screens/ModalHelp';
 import ModalQRCode from '../screens/ModalQRCode';
 import ModalTutorialBike from '../screens/ModalTutorialBike';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default () => (
   <NavigationContainer>
     <Stack.Navigator
       screenOptions={{
-        cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
-        presentation: 'modal'
+        presentation: 'fullScreenModal'
       }}
     >
       <Stack.Screen
